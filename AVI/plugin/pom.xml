@@ -1,0 +1,40 @@
+<plugin>
+    <groupId>com.github.m451</groupId>
+    <artifactId>o11n-deploy-maven-plugin</artifactId>
+    <version>0.2.2</version>
+    <executions>
+        <execution>
+            <phase>install</phase>
+            <goals>
+                <goal>deployplugin</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+      <o11nServer>localhost</o11nServer>
+      <o11nServicePort>8281</o11nServicePort>
+      <o11nConfigPort>8283</o11nConfigPort>
+      <o11nPluginServiceUser>vcoadmin</o11nPluginServiceUser>
+      <o11nPluginServicePassword>vcoadmin</o11nPluginServicePassword>
+      <o11nConfigServiceUser>root</o11nConfigServiceUser>
+      <o11nConfigServicePassword>RootP$$word</o11nConfigServicePassword>
+      <o11nPluginType>VMOAPP</o11nPluginType>
+      <o11nOverwrite>true</o11nOverwrite>
+      <o11nRestartService>true</o11nRestartService>
+      <o11nWaitForPendingChanges>true</o11nWaitForPendingChanges>
+      <o11nDeletePackage>true</o11nDeletePackage>
+      <o11nPackageName>com.example.packagename</o11nPackageName>
+      <o11nPluginFilePath>${project.build.directory}<o11nPluginFilePath>
+      <o11nPluginFileName>${project.build.finalName}</o11nPluginFileName>
+    </configuration>
+</plugin>
+<!-- Optional, see 'install' section of this readme -->
+<repositories>
+    <repository>
+        <id>sonatype-oss-public</id>
+        <url>https://oss.sonatype.org/content/groups/public/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+    </repository>
+</repositories>
