@@ -33,7 +33,6 @@ jobs:
       - name: Copy all external jars into maven local repository
         run: |
           echo "Coping all external Java jars into maven local repository"
-          cd lib
           unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
           echo "VRO external jars copied"
 
