@@ -18,7 +18,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-          cache: 'maven'
 
       - name: Extract branch name
         shell: bash
@@ -34,6 +33,7 @@ jobs:
         run: |
           echo "Installing VRO util jar..."
           echo "Check directory is present or not."
+          ls $HOME/.m2/
           ls $HOME/.m2/repository/
           unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
           echo "VRO util jar installed"
