@@ -18,6 +18,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+          cache: 'maven'
 
       - name: Extract branch name
         shell: bash
@@ -28,8 +29,6 @@ jobs:
         run: |
           echo "Check maven version"
           mvn -version
-          echo "Check Maven local repo location"
-          mvn help:effective-settings
           
       - name: Copy all external jars befour build VRO plugin.
         run: |
