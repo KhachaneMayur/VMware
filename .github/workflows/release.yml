@@ -50,3 +50,11 @@ jobs:
           echo "Build Maven Plugin Example"
           mvn clean install
           echo "Maven plugin example build sucessfull."
+          
+      - name: Check Maven local repository artifacts.
+        run: |
+          echo "Check Maven local repo artifacts"
+          ls $HOME/.m2/repository/
+          ls $HOME/.m2/repository/com
+          ls $HOME/.m2/repository/com/vmware
+
