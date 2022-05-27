@@ -33,7 +33,7 @@ jobs:
         run: |
           echo "Installing VRO util jar..."
           echo "Check directory is present or not."
-          ls $HOME/.m2/
+          mkdir $HOME/.m2/repository/
           ls $HOME/.m2/repository/
           unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
           echo "VRO util jar installed"
@@ -43,3 +43,9 @@ jobs:
           echo "Check Maven external Jars installed."
           cd $HOME/.m2/repository/com/vmware/
           ls o11n/
+          
+      - name: Build Maven Plugin
+        run: |
+          echo "Build Maven Plugin Example"
+          mvn clean install
+          echo "Maven plugin example build sucessfull."
