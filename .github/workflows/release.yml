@@ -24,22 +24,24 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
-      # /home/runner/work/vrealize-orchestrator-plugin-for-alb/vrealize-orchestrator-plugin-for-alb
       - name: Check Maven version
         run: |
           echo "Check maven version"
           mvn -version
+          echo "Check Home path"
+          pwd
+          echo "Check Maven local repo location"
+          mvn help:effective-settings
           
-      - name: Copy all external jars into maven local repository
+      - name: Copy all external jars befour build VRO plugin.
         run: |
           echo "Installing VRO util jar..."
           echo "Check directory is present or not."
           ls $HOME/.m2/repository/
-          echo "Coping all external Java jars into maven local repository"
           unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
-          echo "VRO external jars copied"
-
-      - name: Check all external jars present into maven local repository
+          echo "VRO util jar installed"
+          
+      - name: Check All Maven external Jars are Copied.
         run: |
           echo "Check Maven external Jars installed."
           cd $HOME/.m2/repository/com/vmware/
