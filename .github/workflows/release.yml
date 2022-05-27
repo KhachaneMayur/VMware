@@ -19,13 +19,6 @@ jobs:
         with:
           java-version: 1.8
           
-      - name: Cache Maven packages
-        uses: actions/cache@v2.1.4
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
 
@@ -43,6 +36,8 @@ jobs:
         run: |
           echo "Installing VRO util jar..."
           echo "Check directory is present or not."
+          mkdir $HOME/.m2/repository
+          mkdir $HOME/.m2/repository/com
           ls $HOME/.m2/repository/
           unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
           echo "VRO util jar installed"
