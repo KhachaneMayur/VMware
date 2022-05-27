@@ -32,6 +32,8 @@ jobs:
       - name: Copy all external jars befour build VRO plugin.
         run: |
           echo "Installing VRO util jar..."
+          echo "Check directory is present or not."
+          ls $HOME/.m2/repository/
           unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
           echo "VRO util jar installed"
           
