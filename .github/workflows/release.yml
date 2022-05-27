@@ -39,3 +39,9 @@ jobs:
           echo "Installing VRO util jar..."
           unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
           echo "VRO util jar installed"
+          
+      - name: Check All Maven external Jars are Copied.
+        run: |
+          echo "Check Maven external Jars installed."
+          cd $HOME/.m2/repository/com/vmware/
+          ls o11n/
