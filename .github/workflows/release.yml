@@ -32,11 +32,14 @@ jobs:
           
       - name: Copy all external jars into maven local repository
         run: |
+          echo "Installing VRO util jar..."
+          echo "Check directory is present or not."
+          ls $HOME/.m2/repository/
           echo "Coping all external Java jars into maven local repository"
           unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
           echo "VRO external jars copied"
 
-      - name: Copy all external jars into maven local repository
+      - name: Check all external jars present into maven local repository
         run: |
           echo "Check Maven external Jars installed."
           cd $HOME/.m2/repository/com/vmware/
