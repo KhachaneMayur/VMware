@@ -33,3 +33,9 @@ jobs:
           pwd
           echo "Check Maven local repo location"
           mvn help:effective-settings
+          
+      - name: Copy all external jars befour build VRO plugin.
+        run: |
+          echo "Installing VRO util jar..."
+          unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
+          echo "VRO util jar installed"
