@@ -47,7 +47,7 @@ jobs:
       - name: Build Maven Plugin
         run: |
           echo "Build Maven Plugin Example"
-          mvn clean install
+          mvn clean install --offline
           echo "Maven plugin example build sucessfull."
           
       - name: Check Maven local repository artifacts.
