@@ -29,6 +29,13 @@ jobs:
           echo "Check maven version"
           mvn -version
           
+      - name: Check Home location
+        run: |
+          echo "Check Home location"
+          ls $HOME
+          echo "Check Home location path.."
+          echo $HOME
+          
       - name: Copy all external jars befour build VRO plugin.
         run: |
           echo "Installing VRO util jar..."
