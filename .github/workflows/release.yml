@@ -34,7 +34,7 @@ jobs:
           echo "Check Home location"
           ls $HOME
           echo "Check workspace path."
-          ls $HOME/work
+          ls $HOME/work/VMware
           echo "Check present files from workspace."
           echo "Check Home location path.."
           echo $HOME
