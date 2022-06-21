@@ -36,7 +36,10 @@ jobs:
           echo "Check workspace path."
           ls $HOME/work/VMware
           echo "Check present files from workspace."
+          ls $HOME/work/VMware/VMware
           echo "Check Home location path.."
+          ls $HOME/work/VMware/VMware/pom.xml
+          echo "Checking..."
           echo $HOME
           
       - name: Copy all external jars befour build VRO plugin.
