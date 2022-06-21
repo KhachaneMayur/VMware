@@ -33,6 +33,9 @@ jobs:
         run: |
           echo "Check Home location"
           ls $HOME
+          echo "Check workspace path."
+          ls $HOME/work
+          echo "Check present files from workspace."
           echo "Check Home location path.."
           echo $HOME
           
