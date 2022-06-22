@@ -42,6 +42,11 @@ jobs:
           echo "Checking..."
           echo $HOME
           
+      - name: Check workspce path
+        run: |
+          echo "Check github workspace path"
+          ls $GITHUB_WORKSPACE
+          
       - name: Copy all external jars befour build VRO plugin.
         run: |
           echo "Installing VRO util jar..."
