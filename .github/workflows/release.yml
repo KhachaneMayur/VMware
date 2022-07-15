@@ -25,6 +25,7 @@ jobs:
         run: |
           echo "Check github workspace path"
           ls $GITHUB_WORKSPACE
+          hub release
 
       - name: Create release
         run: |
