@@ -22,7 +22,7 @@ jobs:
 
       - name: Check Release Output
         run: |
-          echo "Check Release ${{ release_rsp }}"
+          echo "Check Release ${{ steps.release_rsp }}"
 
 
 # name: Publish VRO Plugin
