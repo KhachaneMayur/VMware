@@ -18,7 +18,7 @@ jobs:
 
       - name: Check Home location path
         run: |
-          ehco "Check Home location..."
+          echo "Check Home location..."
           pwd
 
       - name: Create release
