@@ -20,9 +20,15 @@ jobs:
         run: |
           echo "Check Home location..."
           pwd
+          
+      - name: Check workspce path
+        run: |
+          echo "Check github workspace path"
+          ls $GITHUB_WORKSPACE
 
       - name: Create release
         run: |
+          cd $GITHUB_WORKSPACE
           hub release create -m "$(date)" "v$(date +%s)"
         id: release_rsp
 
